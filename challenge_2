@@ -1,0 +1,16 @@
+#SQL.
+#You have the following ER diagram:
+#Implement SQL query to select employees first names and last names (employee and managers) who worked from 2020-01-01 to 2020-01-31. 
+#Note that dt_work_from and dt_work_to are date-time fields.
+
+SELECT 
+    employee.first_name,
+    employee.last_name,
+    manager.first_name,
+    manager.last_name
+    
+   FROM table_1
+    JOIN manager ON manager.id_manager = table_1.id_manager
+    JOIN employee ON employee.id_employee = table_1.id_employee
+    
+   WHERE table_1.dt_work_from >='2020-01-01' AND table_1.dt_work_to <='2020-01-31'
